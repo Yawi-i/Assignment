@@ -37,6 +37,19 @@ class EmployeeTest {
                 "PPS ID should be 6 characters"
         );
     }
+    @Test
+    void TestAgePass(){
+        Employee myEmployee = new Employee("name","pps","phone","gender",18);
+        assertTrue(myEmployee.Age() >= 18,"Minimum age required is 18");
+    }
+    @Test
+    void TestAgeFail(){
+        Employee myEmployee = new Employee("name","pps","phone","gender",17);
+        assertThrows(IllegalArgumentException.class,
+                () -> {myEmployee.Age();},
+                "Minimum age required is 18"
+        );
+    }
     @AfterEach
     void tearDown() {
     }
