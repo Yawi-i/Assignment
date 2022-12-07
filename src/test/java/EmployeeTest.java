@@ -24,6 +24,19 @@ class EmployeeTest {
                 "Name should be 5 to 22 characters"
         );
     }
+    @Test
+    void TestPPSPass(){
+        Employee myEmployee = new Employee("name","ABC123","phone","gender",0);
+        assertTrue(myEmployee.Pps() == 6,"PPS ID should be 6 characters");
+    }
+    @Test
+    void TestPPSFail(){
+        Employee myEmployee = new Employee("name","AB12","phone","gender",0);
+        assertThrows(IllegalArgumentException.class,
+                () -> {myEmployee.Pps();},
+                "PPS ID should be 6 characters"
+        );
+    }
     @AfterEach
     void tearDown() {
     }
