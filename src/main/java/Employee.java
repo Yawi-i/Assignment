@@ -20,4 +20,11 @@ public class Employee {
         }
         return a;
     }
+    public int Pps(){
+        int a = pps.length();
+        if (a != 6){
+            throw new IllegalArgumentException("PPS ID should be 6 characters");
+        }
+        return a;
+    }
 }
