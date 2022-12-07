@@ -27,4 +27,10 @@ public class Employee {
         }
         return a;
     }
+    public int Age(){
+        if (age < 18 ){
+            throw new IllegalArgumentException("Minimum age required is 18 ");
+        }
+        return age;
+    }
 }
